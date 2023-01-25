@@ -69,7 +69,7 @@ class _MyWidgetState extends State<MyWidget> {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (BuildContext context) {
-                        return const HomePage();
+                        return const LandingWidget();
                       },
                     ),
                   );
