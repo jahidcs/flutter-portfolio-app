@@ -1,0 +1,2 @@
+1. splashScreen -> Navbar > Profile page -> Search page -> bookmark page
+2. models

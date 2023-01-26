@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:github_api_portfolio/main.dart';
+import 'package:github_api_portfolio/views/tabs/profile_page.dart';
+import 'package:github_api_portfolio/optional.dart';
 import 'package:github_api_portfolio/repo_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -69,7 +70,7 @@ class _MyWidgetState extends State<MyWidget> {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (BuildContext context) {
-                        return const LandingWidget();
+                        return const ProfileWidget();
                       },
                     ),
                   );
