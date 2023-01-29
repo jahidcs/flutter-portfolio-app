@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_api_portfolio/providers/searched_user_repo_provider.dart';
 
-class RepoWidget extends ConsumerStatefulWidget {
-  const RepoWidget({super.key});
+class SearchedRepoWidget extends ConsumerStatefulWidget {
+  const SearchedRepoWidget({super.key});
 
   @override
-  ConsumerState<RepoWidget> createState() => _RepoWidgetState();
+  ConsumerState<SearchedRepoWidget> createState() => _SearchedRepoWidgetState();
 }
 
-class _RepoWidgetState extends ConsumerState<RepoWidget> {
+class _SearchedRepoWidgetState extends ConsumerState<SearchedRepoWidget> {
   @override
   Widget build(BuildContext context) {
     final searchedRepositoryref = ref.watch(searchedRepositoryProvider('jahid11186'));

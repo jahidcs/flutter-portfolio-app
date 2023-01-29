@@ -11,7 +11,6 @@ final searchedRepositoryProvider = FutureProvider.family<List<RepositoryModel>, 
 
   if (response.statusCode == 200) {
     final responseJson = json.decode(response.body);
-    print(responseJson);
     return List<RepositoryModel>.from(
         responseJson.map((x) => RepositoryModel.fromJson(x)));
   } else {

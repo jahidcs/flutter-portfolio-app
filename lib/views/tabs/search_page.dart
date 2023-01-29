@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github_api_portfolio/providers/search_user_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:github_api_portfolio/views/widgets/repo_widget.dart';
+import 'package:github_api_portfolio/views/widgets/searched_repo_widget.dart';
 
 class SearchWidget extends ConsumerStatefulWidget {
   const SearchWidget({super.key});
@@ -32,8 +32,7 @@ class _SearchWidgetState extends ConsumerState<SearchWidget> {
               ),
               onChanged: (value) {
                 if (value.length > 5) {
-                  setState(() {
-                  });
+                  setState(() {});
                 } else if (value.isEmpty) {
                   setState(() {});
                 }
@@ -142,7 +141,7 @@ class _SearchWidgetState extends ConsumerState<SearchWidget> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (BuildContext context) {
-                                        return const RepoWidget();
+                                        return const SearchedRepoWidget();
                                       },
                                     ),
                                   );
@@ -178,7 +177,7 @@ class _SearchWidgetState extends ConsumerState<SearchWidget> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (BuildContext context) {
-                                        return RepoWidget();
+                                        return const SearchedRepoWidget();
                                       },
                                     ),
                                   );
@@ -231,49 +230,3 @@ class _SearchWidgetState extends ConsumerState<SearchWidget> {
     );
   }
 }
-
-
-//     return GestureDetector(
-//       onTap: () {
-//         FocusScope.of(context).unfocus();
-//       },
-//       child: Scaffold(
-//         body: SingleChildScrollView(
-//           padding: const EdgeInsets.all(24),
-//           child: Form(
-//             key: _formKey,
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.stretch,
-//               children: [
-//                 TextFormField(
-//                   controller: _searchController,
-//                   validator: (value) {
-//                     if (value!.isEmpty) {
-//                       return "field can not be empty";
-//                     }
-//                     return null;
-//                   },
-//                   decoration: const InputDecoration(
-//                     labelText: 'Search',
-//                     prefixIcon: Icon(Icons.search),
-//                   ),
-//                 ),
-//                 const SizedBox(
-//                   height: 10,
-//                 ),
-//                 ElevatedButton(
-//                   onPressed: onSearch,
-//                   child: const Text('Search'),
-//                 ),
-//                 const SizedBox(
-//                   height: 16,
-//                 ),
-//                 Expanded(child: searchUserRef.when())
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

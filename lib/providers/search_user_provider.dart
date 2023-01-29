@@ -7,14 +7,10 @@ import 'package:http/http.dart';
 final userSearchProvider =
     FutureProvider.family<UserModel?, String?>((ref, userid) async {
   if (userid == null) {
-    print('null');
     return null;
-  } else {
-    print(userid);
   }
 
   Uri url = Uri.parse('${ApiConstants.searchProfile}$userid');
-  print(url);
 
   final response = await get(url);
 
